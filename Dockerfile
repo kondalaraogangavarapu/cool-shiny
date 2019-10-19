@@ -10,9 +10,6 @@ RUN apt-get update && add-apt-repository \
     apt-get update && apt-get install  -y r-base r-base-dev && \
     R -e "install.packages(c('shiny'))"
 
-RUN locale-gen en_US.utf8 \
-    && /usr/sbin/update-locale LANG=en_US.UTF-8
-ENV LANG=en_US.UTF-8
 
 COPY src /root
 
