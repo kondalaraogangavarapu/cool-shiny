@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 USER root
 
-RUN apt-get update && apt-get install -y software-properities-common 
+RUN apt-get update && apt-get install -y software-properties-common 
 
 RUN apt-get update && add-apt-repository \
     "deb https://cloud.r-project.org/bin/linux/ubuntu xenial/" && \
