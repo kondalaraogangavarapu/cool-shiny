@@ -1,10 +1,8 @@
 FROM ubuntu:16.04
 
-ARG DEBIAN_FRONTEND=noninteractive
-
 USER root
 
-RUN apt-get update && apt-get install -y apt-transport-https
+RUN apt-get update && apt-get install -y software-properities-common 
 
 RUN apt-get update && add-apt-repository \
     "deb https://cloud.r-project.org/bin/linux/ubuntu xenial/" && \
@@ -18,5 +16,3 @@ ENV LANG=en_US.UTF-8
 COPY src /root
 
 CMD cd /root && R -e 'library(shiny);shiny::runApp("./", port=8080)'
-
-
