@@ -13,4 +13,4 @@ RUN apt-get update && add-apt-repository \
 
 COPY src /root
 
-CMD cd /root && R -e 'library(shiny);shiny::runApp("./", port=8080)'
+CMD  R -e 'library(shiny);shiny::runApp("/root/", port=8081, host= "0.0.0.0")'
